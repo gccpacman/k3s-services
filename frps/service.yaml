@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frps
+spec:
+  selector:
+    app: frps
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 7000
+      targetPort: 7000
+      nodePort: 30000
+      name: frps-bind-port
+    - protocol: TCP
+      port: 7001
+      targetPort: 7001
+      nodePort: 30001
+      name: frps-dashboard-port
+    - protocol: TCP
+      port: 5389
+      targetPort: 5389
+      nodePort: 30389
+      name: au7-rdp   
+      

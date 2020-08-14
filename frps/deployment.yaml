@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frps
+  labels:
+    app: frps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frps
+  template:
+    metadata:
+      labels:
+        app: frps
+    spec:
+      containers:
+        - name: frps
+          image: snowdreamtech/frps
+          volumeMounts:
+            - name: config
+              mountPath: "/etc/frp"
+              readOnly: true
+      volumes:
+        - name: config
+          secret:
+            secretName: frps-config
