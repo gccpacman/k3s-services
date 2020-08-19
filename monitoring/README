@@ -1,0 +1,5 @@
+https://medium.com/@chris_linguine/how-to-monitor-your-kubernetes-cluster-with-prometheus-and-grafana-2d5704187fc8
+
+helm install grafana stable/grafana \
+    -f monitoring/grafana/values.yml \
+    --namespace monitoring
