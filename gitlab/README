@@ -1,0 +1,11 @@
+
+helm repo add gitlab https://charts.gitlab.io/
+
+helm repo update
+
+helm install gitlab gitlab/gitlab \
+  --set global.hosts.domain=git.datadude.xyz \
+  --set certmanager-issuer.email=gccpacman@gmail.com
+
+
+sudo EXTERNAL_URL="https://git.datadude.xyz" apt-get install gitlab-ee
