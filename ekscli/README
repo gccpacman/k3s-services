@@ -1,0 +1,9 @@
+eksctl create cluster \
+--name myeks \
+--version 1.17 \
+--region ap-northeast-2 \
+--fargate
+
+[ℹ]  CloudWatch logging will not be enabled for cluster "myeks" in "ap-northeast-2"
+[ℹ]  you can enable it with 'eksctl utils update-cluster-logging --region=ap-northeast-2 --cluster=myeks'
+

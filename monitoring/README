@@ -4,6 +4,12 @@ https://medium.com/@chris_linguine/how-to-monitor-your-kubernetes-cluster-with-p
 helm install prometheus stable/prometheus \
     --namespace monitoring
 
+
 helm install grafana stable/grafana \
     -f monitoring/grafana/values.yml \
     --namespace monitoring
+
+default user/pass: admin/admin
+
+
+helm install stable/prometheus-operator --generate-name
